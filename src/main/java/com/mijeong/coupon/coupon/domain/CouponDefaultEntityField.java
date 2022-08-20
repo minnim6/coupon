@@ -6,8 +6,7 @@ import javax.persistence.*;
 
 @Getter
 @MappedSuperclass
-@Entity
-public class CouponDefaultEntityField {
+public abstract class CouponDefaultEntityField {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Id
     private Long id;

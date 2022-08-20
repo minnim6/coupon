@@ -2,14 +2,12 @@ package com.mijeong.coupon.coupon.domain;
 import jdk.jfr.Timestamp;
 import lombok.Getter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.time.LocalDate;
 
 @Getter
 @Table(name = "coupon")
+@AttributeOverride(name = "id", column = @Column(name = "coupon_id"))
 @Entity
 public class Coupon extends CouponDefaultEntityField {
 
@@ -17,8 +15,7 @@ public class Coupon extends CouponDefaultEntityField {
     private Long usedUserId;
 
     @Column(name = "coupon_information_id")
-    @ManyToOne
-    private CouponInformation couponInformation;
+    private Long couponInformationId;
 
     @Column(name = "coupon_code")
     private String couponCode;

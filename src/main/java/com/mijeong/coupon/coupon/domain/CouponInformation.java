@@ -9,6 +9,7 @@ import java.time.LocalDate;
 
 @Getter
 @Table(name = "coupon_information")
+@AttributeOverride(name = "id", column = @Column(name = "coupon_information_id"))
 @Entity
 public class CouponInformation extends CouponDefaultEntityField {
 
